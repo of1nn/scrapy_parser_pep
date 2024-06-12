@@ -93,3 +93,6 @@ FEEDS = {
 ITEM_PIPELINES = {
     'pep_parse.pipelines.PepParsePipeline': 300,
 }
+
+NAME = 'pep'
+START_URL = 'peps.python.org'

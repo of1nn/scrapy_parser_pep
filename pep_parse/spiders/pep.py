@@ -1,12 +1,13 @@
 import scrapy
 
 from pep_parse.items import PepParseItem
+from pep_parse.settings import NAME, START_URL
 
 
 class PepSpider(scrapy.Spider):
-    name = 'pep'
-    allowed_domains = ['peps.python.org']
-    start_urls = ['https://peps.python.org/']
+    name = NAME
+    allowed_domains = [START_URL]
+    start_urls = [f'https://{START_URL}/']
 
     def parse(self, response):
         all_peps = response.css('tr td a.pep.reference.internal:first-child')
